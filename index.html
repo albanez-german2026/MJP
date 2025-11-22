@@ -320,10 +320,9 @@ section {
     text-shadow: 0 0 10px #000;
 }
 
-/*-------OUR STORY --------*/
-/* ------------------------------
-   STORY SECTION (formerly HERO)
------------------------------- */
+/*------- OUR STORY --------*/
+
+/* HERO STORY HEADER */
 .story {
     margin-top: 0px;
     height: 70vh;
@@ -343,32 +342,33 @@ section {
     font-size: 1.8rem;
 }
 
-/* ------------------------------
-   MAIN SPLIT SECTION
------------------------------- */
+/* MAIN SPLIT (slideshow + timeline beside each other) */
 .story-split {
     display: flex;
-    height: 90vh;
-    margin-top: 0px;
+    width: 100%;
+    gap: 30px;
+    padding: 30px 0;
 }
 
 /* LEFT: SLIDESHOW */
 .slideshow-container {
-    width: 300px;          /* FIXED width */
-    height: 400px;         /* FIXED height */
-    overflow: hidden;      /* prevent image from escaping */
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
     border-radius: 12px;
+    position: relative;
 }
 .slide {
     width: 100%;
     height: 100%;
     position: absolute;
+    display: none;
 }
-
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* or "contain" */
+    object-fit: cover;
+    object-position: center;
 }
 .fade-slide {
     animation: fadeEffect 1.2s;
@@ -378,32 +378,26 @@ section {
     to { opacity: 1; }
 }
 
-/* RIGHT: TIMELINE */
+/* RIGHT SIDE: TIMELINE */
 .timeline-wrapper {
     width: 65%;
-    padding: 30px 30px;
-    margin: auto;
+    padding-right: 30px;
     font-family: Arial, sans-serif;
     font-size: 15px;
 }
 .typewriter {
-
     font-size: 40px;
     text-align: center;
     color: #0d3c78;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     font-family: 'Brittany', cursive;
 }
 
-/* MODERN ENTRY STYLE */
+/* TIMELINE CARDS */
 .timeline {
     display: flex;
     flex-direction: column;
     gap: 25px;
-}
-
-.entry {
-    width: 100%;
 }
 
 .entry p {
@@ -415,42 +409,52 @@ section {
     border-left: 4px solid #0d3c78;
 }
 
-/* FADE ANIMATION */
+/* SCROLL FADE */
 .fade {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.9s ease;
 }
-
 .fade.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* MOBILE RESPONSIVE */
+/* ------------------------------
+   MOBILE FIXES (IMPORTANT)
+------------------------------ */
 @media (max-width: 950px) {
+
+    /* STACK ALL CONTENT */
+    .story-split {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    /* MOBILE SLIDESHOW FULL WIDTH */
+    .slideshow-container {
+        width: 100%;
+        height: 280px;
+        border-radius: 0;
+    }
+
     .timeline-wrapper {
         width: 100%;
         padding: 20px;
+        text-align: left;
     }
 
     .typewriter {
         font-size: 28px;
         padding: 0 10px;
+        margin-top: 20px;
     }
 
     .entry p {
         font-size: 14px;
         padding: 18px;
     }
-    .slideshow-container {
-        width: 100%;        /* full width on phone */
-        height: 260px;      /* adjust height for mobile */
-        border-radius: 0;   /* optional: remove rounded corners */
-    }
-
-    .slide img {
-        object-fit: cover;  /* still fills nicely */
 }
 
 
@@ -923,8 +927,7 @@ footer {
 
 
 
-<!--OUR STORY-->
-<!-- SPLIT LAYOUT -->
+<!-- OUR STORY SECTION -->
 <section class="story-split">
 
     <!-- LEFT SIDE: SLIDESHOW -->
@@ -951,15 +954,15 @@ footer {
         <div class="slide fade-slide"><img src="images/story22.jpg"></div>
     </div>
 
-    <!-- RIGHT SIDE: TIMELINE -->
+    <!-- RIGHT SIDE: STORY TIMELINE -->
     <div class="timeline-wrapper">
 
-    <div class="typewriter"><strong>"Just us — and a story worth sharing."</strong></div>
+        <div class="typewriter"><strong>"Just us — and a story worth sharing."</strong></div>
 
-    <div class="timeline">
+        <div class="timeline">
 
-        <div class="entry fade">
-            <p>
+            <div class="entry fade">
+                <p>
                 It all began in 2007 at Gen. Ricardo Papa Sr. Memorial High School, where two young hearts,
                 John Paul and Mary Joy, first crossed paths. They were classmates back then—always teasing
                 and playfully annoying each other. John Paul would often sneak behind Mary Joy’s seat just
@@ -1012,14 +1015,13 @@ footer {
             </p>
         </div>
     </div>
-    </div>
+</div>
 </section>
 
 <!-- JS: TIMELINE FADE + SLIDESHOW -->
 <script>
-/* TIMELINE SCROLL ANIMATION */
+/* TIMELINE FADE */
 const fades = document.querySelectorAll('.fade');
-
 function revealOnScroll() {
     fades.forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 120) {
@@ -1027,7 +1029,6 @@ function revealOnScroll() {
         }
     });
 }
-
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
@@ -1039,11 +1040,12 @@ function showSlides() {
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1; }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3500); // 3.5 seconds
+    setTimeout(showSlides, 3500);
 }
 showSlides();
 </script>
 
+    
 <!-- INVITATION -->
 <section>
 <div class="elegant-collage">
