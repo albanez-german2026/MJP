@@ -352,11 +352,12 @@ section {
 
 /* LEFT: SLIDESHOW */
 .slideshow-container {
-    width: 400px;
-    height: 400px;
+    width: 600px;      /* bigger width on desktop */
+    height: 600px;     /* bigger height on desktop */
     overflow: hidden;
     border-radius: 12px;
     position: relative;
+    margin: auto;
 }
 .slide {
     width: 100%;
@@ -380,16 +381,16 @@ section {
 
 /* RIGHT SIDE: TIMELINE */
 .timeline-wrapper {
-    width: 60%;
+    width: 50%;
     padding-right: 30px;
     font-family: Arial, sans-serif;
     font-size: 15px;
 }
 .typewriter {
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
     color: #0d3c78;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: 'Brittany', cursive;
 }
 
@@ -446,14 +447,16 @@ section {
     }
 
     .typewriter {
-        font-size: 28px;
+        font-size: 33px;
         padding: 0 10px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
-
-    .entry p {
-        font-size: 14px;
-        padding: 18px;
+     .slide img {
+        object-fit: contain; /* keep whole image visible on mobile */
+     }
+         .entry p {
+        font-size: 12px;
+        padding: 15px;
     }
 }
 
