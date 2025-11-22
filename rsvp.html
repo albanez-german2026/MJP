@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSVP - Mary Joy & John Paul Wedding</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+
+/* RSVP Hero Section */
+.rsvp-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 400px;
+    background-image: url('images/save.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rsvp-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.4); /* darker overlay for contrast */
+    z-index: 1;
+}
+
+.rsvp-hero h1 {
+    position: relative;
+    z-index: 2;
+    color: #f7f8f8;
+    font-family: "Georgia", serif;
+    font-size: 80px;
+    text-align: center;
+    margin: 0;
+}
+
+/* RSVP Form Overlapping Hero */
+.rsvp-container {
+    position: absolute;
+    top: 50%; /* adjust to move box up/down */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: transparent;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 3;
+}
+
+.rsvp-container h2 {
+    color: #f4f4f5;
+    margin-bottom: 10px;
+}
+
+.rsvp-container p {
+    margin-bottom: 20px;
+    font-size: 10px;
+    color: #f7fafd;
+}
+
+.rsvp-container a.button {
+    display: inline-block;
+    padding: 13px 20px;
+    background-color: #0d3c78;
+    color: white;
+    text-decoration: none;
+    border-radius: 13px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.rsvp-container a.button:hover {
+    background-color: #06509c;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 6px 0;
+    font-size: 7px;
+    color: #1b2d4f;
+    background-color: #f0f6ff;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .rsvp-container {
+        top: 65%;
+        padding: 20px;
+    }
+    .rsvp-hero h1 {
+        font-size: 40px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="venue.html">Venue</a></li>
+            <li><a href="rsvp.html" class="active">RSVP</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- RSVP Hero -->
+<section class="rsvp-hero">
+    <div class="overlay">
+    <h1>RSVP</h1>
+    </div>
+    <div class="rsvp-container">
+        <h2>Confirm Your Attendance</h2>
+        <p>Please click the button below to RSVP through our Google Form.</p>
+        <a href="https://forms.gle/bQNdfYktgbrnaazp9" target="_blank" class="button">
+            Fill Out RSVP Form
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 John Paul & Mary Joy Wedding</p>
+</footer>
+
+</body>
+</html>

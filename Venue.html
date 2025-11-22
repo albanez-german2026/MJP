@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venue - Mary Joy & John Paul Wedding</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.venue-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 45px auto;
+    flex-wrap: wrap; /* Stacks on smaller screens */
+}
+.venue-box {
+    flex: 1 1 400px; /* grow, shrink, basis */
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.venue-section-title {
+    text-align: center;
+    color: #0d3c78;
+    margin-bottom: 20px;
+}
+.qr-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.qr-row img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+@media (max-width: 900px) {
+    .venue-container {
+        flex-direction: column;
+    }
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="venue.html" class="active">Venue</a></li>
+<li><a href="rsvp.html">RSVP</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="venue-hero">
+  <div class="overlay">
+    <h1>Venue</h1>
+  </div>
+</section>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="venue-container">
+
+    <!-- CEREMONY -->
+<div class="venue-box">
+    <h2 class="venue-section-title">Wedding Ceremony</h2>
+    <p style="text-align:center; line-height:1.8;">
+        Diocesan Shrine and Parish of Saint Pio of Pietrelcina<br>
+        Sumulong Highway, Brgy. Sta Cruz, Antipolo City<br>
+        Ceremony starts at 4:00 PM
+    </p>
+
+    <!-- Map + QR side by side -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:20px;">
+        <!-- Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=" 
+                width="200" height="200" 
+                style="border:0; border-radius:8px;" 
+                allowfullscreen="" loading="lazy">
+        </iframe>
+
+        <!-- QR Code -->
+        <div style="text-align:center;">
+            <img src="images/church.jpg" 
+                 alt="Ceremony Location QR" 
+                 width="200" height="200" 
+                 style="border-radius:10px;">
+        </div>
+    </div>
+</div>
+
+
+    <!-- RECEPTION -->
+<div class="venue-box">
+    <h2 class="venue-section-title">Wedding Reception</h2>
+    <p style="text-align:center; line-height:1.8;">
+        Water Nymph Resort Events Venue<br>
+        Pio Del Pilar, Concepcion Dos, Marikina City<br>
+        Reception immediately follows after ceremony
+    </p>
+
+    <!-- Map + QR side by side -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:20px;">
+        <!-- Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=" 
+                width="200" height="200" 
+                style="border:0; border-radius:8px;" 
+                allowfullscreen="" loading="lazy">
+        </iframe>
+
+        <!-- QR Code -->
+        <div style="text-align:center;">
+            <img src="images/reception.jpg" 
+                 alt="Reception Location QR" 
+                 width="200" height="200" 
+                 style="border-radius:10px;">
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

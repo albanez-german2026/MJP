@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Mary Joy & John Paul Wedding</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Gallery CSS -->
+    <style>
+        /* Justified collage layout */
+        .justified-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            max-width: 1100px;
+            margin: auto;
+            padding-bottom: 10px;
+        }
+
+        .justified-gallery img {
+            height: 190px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-grow: 1;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 700px) {
+            .justified-gallery img {
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .justified-gallery img {
+                height: 120px;
+            }
+        }
+
+      
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="venue.html">Venue</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<h1 class="gallery-title">Gallery</h1>
+
+<!-- IMAGE COLLAGE -->
+<section style="padding: 10px 0px; background:url('images/watercolor-bg.jpg');">
+    <div class="justified-gallery">
+        
+        <img src="images/photo1.jpg" alt="">
+        <img src="images/photo2.jpg" alt="">
+        <img src="images/photo3.jpg" alt="">
+        <img src="images/photo4.jpg" alt="">
+        <img src="images/photo5.jpg" alt="">
+        <img src="images/photo6.1.jpg" alt="">
+        <img src="images/photo7.jpg" alt="">
+        <img src="images/photo8.jpg" alt="">
+        <img src="images/photo9.1.jpg" alt="">
+        <img src="images/photo10.jpg" alt="">
+        <img src="images/photo11.jpg" alt="">
+        <img src="images/photo12.jpg" alt="">
+        <img src="images/photo13.jpg" alt="">
+        <img src="images/photo14.jpg" alt="">
+        <img src="images/photo16.jpg" alt="">
+        <img src="images/photo17.jpg" alt="">
+        <img src="images/photo18.jpg" alt="">
+        <img src="images/photo19.jpg" alt="">
+        <img src="images/photo20.jpg" alt="">
+        <img src="images/photo21.jpg" alt="">
+        <img src="images/photo22.jpg" alt="">
+        <img src="images/photo23.jpg" alt="">
+        <img src="images/photo24.jpg" alt="">
+
+       
+
+
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 John Paul & Mary Joy Wedding</p>
+</footer>
+
+</body>
+</html>

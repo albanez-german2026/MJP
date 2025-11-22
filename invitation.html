@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitation - Mary Joy & John Paul Wedding</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* Elegant 5-photo collage */
+.elegant-collage {
+    max-width: 900px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 18px;
+    padding: 8px;
+}
+
+.elegant-collage .collage-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.13);
+    background: #fff;
+    border: 2px solid #f8f4ef; /* soft frame */
+}
+
+.elegant-collage .collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* shape variations */
+.elegant-collage .tall {
+    grid-row: span 2;
+}
+
+.elegant-collage .wide {
+    grid-column: span 2;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .elegant-collage {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+
+    .elegant-collage .wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .elegant-collage {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 240px;
+    }
+
+    .elegant-collage .tall {
+        grid-row: span 2;
+    }
+
+    .elegant-collage .wide {
+        grid-column: span 1;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="venue.html">Venue</a></li>
+<li><a href="rsvp.html">RSVP</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero" style="height:5vh; background-image:url('images/watercolor-bg.jpeg');">
+<div class="overlay" style="background:rgba(255,255,255,0.6); padding-top:30px;">
+    <h1 style="color:#0d3c78;">Wedding Invitation</h1>
+</div>
+</section>
+
+<section style="padding:10px 10px; background:url('images/photo9.jpg');">
+
+<!-- ⭐ Elegant 5-Photo Collage Included ⭐ -->
+<div class="elegant-collage">
+    <div class="collage-item tall"><img src="images/1.png" alt="Photo 1"></div>
+    <div class="collage-item tall"><img src="images/2.png" alt="Photo 2"></div>
+	<div class="collage-item tall"><img src="images/3.png" alt="Photo 3"></div>
+    <div class="collage-item tall"><img src="images/4.png" alt="Photo 4"></div>
+	<div class="collage-item tall"><img src="images/5.png" alt="Photo "></div>
+	
+    
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 John Paul & Mary Joy Wedding</p>
+</footer>
+
+</body>
+</html>

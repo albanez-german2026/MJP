@@ -1,0 +1,361 @@
+/* IMPORT BRITTANY SIGNATURE FONT */
+@font-face {
+    font-family: 'Brittany';
+    src: url('fonts/BrittanySignature.ttf') format('truetype');
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fffaf8;
+    color: #1b2d4f;
+    overflow-x: hidden;
+}
+
+/* FADE ANIMATIONS */
+.fade-in { opacity: 0; animation: fadeIn 2s ease forwards; }
+.fade-in-slow { opacity: 0; animation: fadeIn 2.5s ease forwards; }
+.fade-in-delay { opacity: 0; animation: fadeIn 3s ease forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* INVITE TEXT */
+.invite-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 6px;
+    letter-spacing: 2px;
+    font-weight: 250;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.gallery-title {
+    text-align: center;
+    font-family: 'Brittany', cursive;
+    font-size: 5px;
+    margin-top: 15px;
+    color: #0A2540; /* deep navy */
+}
+
+/* NAVIGATION */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0px 0;
+    padding: 0;
+}
+
+header {
+    background: #fffaf8;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 35px; /* Fixed header height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+nav a { 
+    text-decoration: none; 
+    font-weight: bold; 
+    color: #001F3F;
+    font-size: 12px; 
+}
+
+nav a.active { 
+    color: #99b9f4; 
+}
+
+/* HERO SECTION */
+.hero {
+    background-image: url("images/photo6.jpeg");
+    background-size: cover;
+    background-position: center;
+    min-height: 150vh;
+    position: relative; /* Important for absolute positioning of children */
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+/* HERO TITLE */
+.hero h1 {
+    font-family: 'Brittany';
+    font-size: 105px;
+    color: white;
+    margin: 8px 0;
+    text-shadow: 0 0 10px #3c85f4;
+}
+
+/* DATE + COUNTDOWN WRAPPER */
+.date-countdown-wrapper {
+    position: absolute;
+    bottom: 5px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    z-index: 1000;
+}
+
+/* DATE BLOCK */
+.wedding-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+.date-line {
+    height: 1.5px;
+    background: #edeef0;
+    width: 80px;
+}
+
+.date-content {
+    color: white;
+    font-family: 'Calmius Sans High', serif;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.month {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.date-row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.day, .time {
+    font-size: 8px;
+}
+
+.date-number {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px #4c4ceb;
+}
+
+.year {
+    display: block;
+    font-size: 15px;
+    margin-top: 2;
+    letter-spacing: 1px;
+}
+
+/* COUNTDOWN */
+.countdown-hero {
+    display: flex;
+    gap: 10px;
+    margin-top: 0px;
+}
+
+.time-box {
+    background: #001F3F;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+.time-box span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.time-box p {
+    margin: 0;
+    font-size: 0.4rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 6px 0;
+    font-size: 7px;
+    color: #1b2d4f;
+    background-color: #f0f6ff;
+}
+
+/* GALLERY HEADING */
+.gallery-hero h1 {
+    color: #0d3c78 !important;
+    font-size: 80px !important;
+    text-align: center;
+    margin: 0;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 50px; }
+    .date-number { font-size: 55px; }
+    .month, .year, .day, .time { font-size: 12px; }
+    .date-row { gap: 15px; }
+    .countdown-hero { margin-top: 30px; }
+    .time-box { width: 55px; height: 55px; }
+}
+
+/* SECTION BLOCK (Sam & Vera style) */
+.homepage-block {
+    max-width: 800px;
+    margin: 70px auto;
+    text-align: center;
+    padding: 50px 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+/* Section Titles */
+.section-title {
+    font-family: 'Brittany';
+    font-size: 55px;
+    margin-bottom: 10px;
+    color: #0d3c78;
+}
+
+/* Section Text */
+.section-text {
+    font-size: 16px;
+    color: #1b2d4f;
+    margin-bottom: 20px;
+}
+
+/* Elegant Button */
+.cta-button {
+    display: inline-block;
+    background: #0d3c78;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Gallery Preview Box */
+.gallery-preview {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.gallery-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: .3s;
+}
+
+.gallery-preview:hover .gallery-preview-overlay {
+    opacity: 1;
+}
+
+.venue-hero {
+    position: relative;
+    height: 50vh; /* taller than 30vh for better image display */
+    min-height: 250px; /* ensures minimum height on small screens */
+    background-image: url('images/venue.jpg');
+    background-size: cover; /* ensures the image covers the entire section */
+    background-position: center; /* centers the image */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.venue-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.6); /* semi-transparent white overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.venue-hero h1 {
+    color: #0d3c78;
+    font-family: "Georgia", serif;
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+}
+
+@media(max-width:768px){
+    .venue-hero {
+        height: 40vh;
+    }
+    .venue-hero h1 {
+        font-size: 36px;
+    }
+}
+
+@media(max-width:480px){
+    .venue-hero {
+        height: 30vh;
+    }
+    .venue-hero h1 {
+        font-size: 28px;
+    }
+}
+
+
+
+
