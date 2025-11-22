@@ -354,20 +354,26 @@ section {
 
 /* LEFT: SLIDESHOW */
 .slideshow-container {
-    width: 50%;
-    height: 100%;
-    position: relative;
+    width: 450px;        /* adjust as you like */
+    height: 300px;
     overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    background: #f0f0f0; 
 }
 .slide {
-    display: none;
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;       /* JS will show/hide */
 }
+
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;   /* or "contain" */
 }
 .fade-slide {
     animation: fadeEffect 1.2s;
@@ -381,7 +387,7 @@ section {
 .timeline-wrapper {
     width: 65%;
     padding: 30px 30px;
-    overflow-y: auto;
+    margin: auto;
     font-family: Arial, sans-serif;
     font-size: 15px;
 }
@@ -394,74 +400,53 @@ section {
     font-family: 'Brittany', cursive;
 }
 
-/* TIMELINE STYLES */
+/* MODERN ENTRY STYLE */
 .timeline {
-    position: relative;
-}
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background: #0d3c78;
-    transform: translateX(-50%);
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .entry {
-    width: 50%;
-    padding: 20px 30px;
-    position: relative;
-    box-sizing: border-box;
+    width: 100%;
 }
-.entry-left { left: 0; text-align: right; }
-.entry-right { left: 50%; text-align: left; }
-
-.entry::before {
-    content: "";
-    position: absolute;
-    top: 25px;
-    width: 18px;
-    height: 18px;
-    background: #fff;
-    border: 4px solid #0d3c78;
-    border-radius: 50%;
-}
-.entry-left::before { right: -12px; }
-.entry-right::before { left: -12px; }
 
 .entry p {
-    background: #fff;
-    padding: 18px;
-    border-radius: 10px;
-    line-height: 1.7;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    background: #ffffff;
+    padding: 20px 22px;
+    border-radius: 14px;
+    line-height: 1.75;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-left: 4px solid #0d3c78;
 }
 
-/* Fade animation */
+/* FADE ANIMATION */
 .fade {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 1s ease;
+    transition: all 0.9s ease;
 }
+
 .fade.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ------------------------------
-   RESPONSIVE
------------------------------- */
+/* MOBILE RESPONSIVE */
 @media (max-width: 950px) {
-    .story-split {
-        flex-direction: column;
-        height: auto;
-    }
-    .slideshow-container,
     .timeline-wrapper {
         width: 100%;
-        height: auto;
+        padding: 20px;
+    }
+
+    .typewriter {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+
+    .entry p {
+        font-size: 14px;
+        padding: 18px;
     }
 }
 
@@ -966,13 +951,12 @@ footer {
     <!-- RIGHT SIDE: TIMELINE -->
     <div class="timeline-wrapper">
 
-        <div class="typewriter"><strong>"Just us — and a story worth sharing."</strong></div>
+    <div class="typewriter"><strong>"Just us — and a story worth sharing."</strong></div>
 
-        <div class="timeline">
+    <div class="timeline">
 
-            <!-- ENTRY 1 -->
-            <div class="entry entry-left fade">
-                <p>
+        <div class="entry fade">
+            <p>
                 It all began in 2007 at Gen. Ricardo Papa Sr. Memorial High School, where two young hearts,
                 John Paul and Mary Joy, first crossed paths. They were classmates back then—always teasing
                 and playfully annoying each other. John Paul would often sneak behind Mary Joy’s seat just
@@ -980,23 +964,22 @@ footer {
                 <br><br>
                 Neither of them knew that those lighthearted moments would one day become the first pages
                 of their love story.</p>
-            </div>
+            </p>
+        </div>
 
-            <!-- ENTRY 2 -->
-            <div class="entry entry-right fade">
-                <p>
+        <div class="entry fade">
+            <p>
                 But as life would have it, in May 2010, John Paul and his family moved to Laguna. They went
                 their separate ways, each following their own path. Time passed, messages faded, and what
                 was once a daily dose of teasing turned into silence.
                 <br><br>
                 Yet somewhere in the background, fate quietly waited for the right moment to bring them
                 back together.
-                </p>
-            </div>
+            </p>
+        </div>
 
-            <!-- ENTRY 3 -->
-            <div class="entry entry-left fade">
-                <p>
+        <div class="entry fade">
+            <p>
                 Six years later, in May 2016, destiny stepped in again. John Paul returned to Manila in
                 search of a job, and while reconnecting with an old high school friend, a simple plan was
                 made—to have dinner with Mary Joy.
@@ -1004,25 +987,24 @@ footer {
                 That one evening, filled with laughter, stories, and memories of their younger days,
                 changed everything. What started as a friendly catch-up unexpectedly reignited a spark that
                 had always been there, just waiting for the right time.
-                </p>
-            </div>
+            </p>
+        </div>
 
-            <!-- ENTRY 4 -->
-            <div class="entry entry-right fade">
-                <p>As days turned into weeks, they began to see more of each other. Conversations grew deeper,
+        <div class="entry fade">
+            <p>
+                As days turned into weeks, they began to see more of each other. Conversations grew deeper,
                 laughter became louder, and their connection—once innocent and playful—started to blossom
                 into something real.
                 <br><br>
                 By July 2016, John Paul couldn’t hold back his feelings any longer and confessed his love.
                 A few months later, on September 26, 2016, Mary Joy said “yes.” From that moment on, their
                 love story officially began.
-                
-                </p>
-            </div>
+            </p>
+        </div>
 
-            <!-- ENTRY 5 -->
-            <div class="entry entry-left fade">
-                <p>Their journey wasn’t always easy. With different work schedules and busy days, time together
+        <div class="entry fade">
+            <p>
+                Their journey wasn’t always easy. With different work schedules and busy days, time together
                 became a rare gift. But through every distance, every challenge, they held on. Their love
                 was steady—a quiet, comforting reminder that true love is worth the effort.
                 After nine years together, they’ve shared countless smiles, tears, lessons, and dreams.
@@ -1030,13 +1012,12 @@ footer {
                 There were moments when they almost gave up—especially during their seventh year, when life
                 tested them in ways they never expected. But even then, they chose to stay, to understand,
                 to forgive, and to keep loving—even when it wasn’t easy.
-                </p>
-            </div>
+            </p>
+        </div>
 
-            <!-- ENTRY 6 -->
-            <div class="entry entry-right fade">
-                <p>
-                Because real love isn’t just made of perfect days—it’s built on patience, faith, and choosing
+        <div class="entry fade">
+            <p>
+                 Because real love isn’t just made of perfect days—it’s built on patience, faith, and choosing
                 each other a     gain and again, no matter what.
                 <br><br>
                 And now, after all those years of growing together, they’re ready for the next chapter of
@@ -1045,18 +1026,16 @@ footer {
                 <br><br>
                 <strong>Because after all this time, one thing remains beautifully true —  
                 Love found its way home. ❤️</strong>
-                </p>
-            </div>
-
+            </p>
         </div>
     </div>
-
 </section>
 
 <!-- JS: TIMELINE FADE + SLIDESHOW -->
 <script>
 /* TIMELINE SCROLL ANIMATION */
 const fades = document.querySelectorAll('.fade');
+
 function revealOnScroll() {
     fades.forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 120) {
@@ -1064,6 +1043,7 @@ function revealOnScroll() {
         }
     });
 }
+
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
