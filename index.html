@@ -389,13 +389,14 @@ section {
     overflow-y: auto;
     font-family: Arial, sans-serif;
     font-size: 15px;
+    text-align: center;
 }
 .typewriter {
 
     font-size: 80px;
-
+    text-align: center;
     color: #0d3c78;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-family: 'Brittany', cursive;
 }
 
@@ -412,16 +413,25 @@ section {
 .entry {
     display: flex;
     justify-content: center;
-    width: 100%;
+    margin-bottom: 3px; /* spacing between paragraphs */
 }
 
 .entry::before {
     display: none !important; /* remove circles */
 }
 .entry p {
-    max-width: 800px !important;  /* increase width */
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+
+    max-width: 900px !important;  /* wider box */
     width: 100%;
     text-align: left;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
 }
 
 /* Fade animation stays */
@@ -461,10 +471,7 @@ section {
 
     /* Timeline becomes full width */
     .timeline-wrapper {
-        width: 100%;
         padding: 20px;
-        height: auto; 
-        margin-top: 10px;
     }
     }
 
@@ -472,10 +479,13 @@ section {
     .entry {
         width: 95% !important;
         padding: 10px;
+        font-size: 12px;
     }
 
     .typewriter {
         font-size: 30px;
+        margin-bottom: 10px;
+
     }
 }
 
