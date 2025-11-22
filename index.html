@@ -320,6 +320,7 @@ section {
     text-shadow: 0 0 10px #000;
 }
 
+    
 /*------- OUR STORY --------*/
 
 /* HERO STORY HEADER */
@@ -345,30 +346,26 @@ section {
 /* MAIN SPLIT (slideshow + timeline beside each other) */
 .story-split {
     display: flex;
-    width: 100%;
     gap: 30px;
-    padding: 30px 0;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* LEFT: SLIDESHOW */
 .slideshow-container {
-    width: 600px;      /* bigger width on desktop */
-    height: 600px;     /* bigger height on desktop */
+    flex: 0 0 500px;  /* fixed width on desktop */
+    max-height: 700px;
     overflow: hidden;
     border-radius: 12px;
-    position: relative;
-    margin: auto;
 }
-.slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: none;
+
 }
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 }
 .fade-slide {
@@ -381,8 +378,8 @@ section {
 
 /* RIGHT SIDE: TIMELINE */
 .timeline-wrapper {
-    width: 50%;
-    padding-right: 30px;
+    width: 45%;
+    padding-right: 10px;
     font-family: Arial, sans-serif;
     font-size: 15px;
 }
@@ -430,28 +427,28 @@ section {
     .story-split {
         flex-direction: column;
         align-items: center;
-        padding: 0;
+        padding: 5px;
     }
 
     /* MOBILE SLIDESHOW FULL WIDTH */
     .slideshow-container {
         width: 100%;
-        height: 280px;
+        height: 300px;
         border-radius: 0;
+        margin-bottom: 10px;
     }
 
     .timeline-wrapper {
         width: 100%;
-        padding: 20px;
-        text-align: left;
+
     }
 
     .typewriter {
         font-size: 33px;
-        padding: 0 10px;
         margin-top: 10px;
     }
      .slide img {
+        height: 100%;
         object-fit: contain; /* keep whole image visible on mobile */
      }
          .entry p {
