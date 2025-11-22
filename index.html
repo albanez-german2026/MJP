@@ -321,9 +321,10 @@ section {
 }
 
     
-/*------- OUR STORY --------*/
-
-/* HERO STORY HEADER */
+/*-------OUR STORY --------*/
+/* ------------------------------
+   STORY SECTION (formerly HERO)
+------------------------------ */
 .story {
     margin-top: 0px;
     height: 70vh;
@@ -343,122 +344,161 @@ section {
     font-size: 1.8rem;
 }
 
-/* MAIN SPLIT (slideshow + timeline beside each other) */
+/* ------------------------------
+   MAIN SPLIT SECTION
+------------------------------ */
 .story-split {
     display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+    height: 90vh;
+    margin-top: 0px;
 }
 
 /* LEFT: SLIDESHOW */
 .slideshow-container {
-    flex: 0 0 500px;  /* fixed width on desktop */
-    max-height: 700px;
+    width: 50%;
+    height: 100%;
+    position: relative;
     overflow: hidden;
-    border-radius: 12px;
-        /* center content */
-    display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
 }
-
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
 }
 .fade-slide {
     animation: fadeEffect 1.2s;
 }
 @keyframes fadeEffect {
-    from { opacity: .4; }
+    from { opacity: .0; }
     to { opacity: 1; }
 }
 
-/* RIGHT SIDE: TIMELINE */
+/* RIGHT: TIMELINE */
 .timeline-wrapper {
-    width: 45%;
-    padding-right: 10px;
+    width: 65%;
+    padding: 30px 30px;
+    overflow-y: auto;
     font-family: Arial, sans-serif;
     font-size: 15px;
 }
 .typewriter {
-    font-size: 50px;
+
+    font-size: 40px;
     text-align: center;
     color: #0d3c78;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-family: 'Brittany', cursive;
 }
 
-/* TIMELINE CARDS */
+/* TIMELINE STYLES */
 .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    position: relative;
 }
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #0d3c78;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.entry {
+    width: 50%;
+    padding: 20px 30px;
+    position: relative;
+    box-sizing: border-box;
+}
+.entry-left { left: 0; text-align: right; }
+.entry-right { left: 50%; text-align: left; }
+
+.entry::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 4px solid #0d3c78;
+    border-radius: 50%;
+}
+.entry-left::before { right: -12px; }
+.entry-right::before { left: -12px; }
 
 .entry p {
-    background: #ffffff;
-    padding: 18px 20px;
+    background: #fff;
+    padding: 18px;
     border-radius: 10px;
-    line-height: 1.75;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    border-left: 2px solid #0d3c78;
+    line-height: 1.7;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
+    
+@media (max-width: 768px) {
 
-/* SCROLL FADE */
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.9s ease;
-}
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+    /* Overall layout becomes stacked */
+    .story-split {
+        flex-direction: column;
+        height: auto;   /* remove fixed height */
+    }
 
-/* ------------------------------
-   MOBILE FIXES (IMPORTANT)
------------------------------- */
-@media (max-width: 950px) {
-
-
-    /* MOBILE SLIDESHOW FULL WIDTH */
+    /* Slideshow becomes full width, smaller height */
     .slideshow-container {
         width: 100%;
-        height: 300px;
-        border-radius: 0;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 40vh;    /* adjustable */
     }
 
+    /* Images stay centered and stable */
+    .slide,
+    .slide img {
+        height: 100%;
+    }
+
+    /* Timeline becomes full width */
     .timeline-wrapper {
         width: 100%;
-
+        padding: 20px;
+        height: auto;
     }
 
+    /* Timeline line shifts left */
+    .timeline::before {
+        left: 20px;
+    }
+
+    /* Timeline entries full width */
+    .entry {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 20px;
+        text-align: left !important;
+    }
+
+    /* Circles adjust */
+    .entry-left::before,
+    .entry-right::before {
+        left: 10px;
+        right: auto;
+    }
+
+    /* Title smaller for phones */
     .typewriter {
-        font-size: 33px;
-        margin-top: 10px;
-    }
-     .slide img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain; /* keep whole image visible on mobile */
-     }
-         .entry p {
-        font-size: 10px;
-        padding: 10px;
+        font-size: 28px;
     }
 }
 
+    
 
 
 /* -------- GLOBAL -------- */
