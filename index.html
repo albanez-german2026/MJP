@@ -342,7 +342,7 @@ section {
 }
 .story h1 {
     color: #0d3c78;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 /* ------------------------------
@@ -386,7 +386,7 @@ section {
 .timeline-wrapper {
     width:70%;
     margin: 0 auto; 
-    padding: 8px;
+    padding: 10px;
     overflow-y: auto;
     font-family: Arial, sans-serif;
     font-size: 10px;
@@ -396,7 +396,7 @@ section {
     font-size: 80px;
     text-align: center;
     color: #0d3c78;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-family: 'Brittany', cursive;
 }
 
@@ -413,7 +413,7 @@ section {
 .entry {
     display: flex;
     justify-content: center;
-    margin-bottom: 3px; /* spacing between paragraphs */
+    margin-bottom: 10px; /* spacing between paragraphs */
 }
 
 .entry::before {
@@ -421,8 +421,8 @@ section {
 }
 .entry p {
     background: #fff;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 15px;
     max-width: 1050px !important;  /* wider box */
     width: 100%;
     text-align: left;
@@ -447,7 +447,6 @@ section {
    RESPONSIVE (MOBILE)
 ------------------------------ */
 @media (max-width: 950px){
-
 
     /* Overall layout becomes stacked */
     .story-split {
@@ -480,17 +479,15 @@ section {
     .timeline-wrapper {
         padding: 20px;
     }
-    
 
-    /* Timeline entries full width */
-    .entry {
-        width: 100% !important;
+        .entry p {
+        max-width: 100% !important;
+        width: 95%;
         padding: 20px;
         font-size: 10px;
     }
-
     .typewriter {
-        font-size: 50px;
+        font-size: 42px;
         margin-bottom: 10px;
 
     }
