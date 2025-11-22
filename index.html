@@ -421,7 +421,7 @@ section {
 }
 .entry p {
     background: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     max-width: 1050px !important;  /* wider box */
     width: 100%;
@@ -447,7 +447,12 @@ section {
    RESPONSIVE (MOBILE)
 ------------------------------ */
 @media (max-width: 950px) {
-
+.entry p {
+        max-width: 90% !important;
+        padding: 10px;
+        font-size: 10px;   /* bigger text for mobile */
+    }
+}
     /* Overall layout becomes stacked */
     .story-split {
         flex-direction: column;
