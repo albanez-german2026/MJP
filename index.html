@@ -129,65 +129,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;   /* ensures perfect centering */
+    justify-content: center;
     gap: 10px;
-    width: auto;               /* prevents stretching */
+    width: auto;
     z-index: 1000;
 }
 
-/* Wedding Date Block */
-.wedding-date {
+/* NEW — Single-Line Date like Screenshot */
+.wedding-date-line {
     display: flex;
+    gap: 12px;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-}
-
-.date-line {
-    height: 1.5px;
-    background: #edeef0;
-    width: 80px;
-}
-
-.date-content {
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
     letter-spacing: 3px;
-}
-
-.month {
-    font-size: 15px;
-    display: block;
-    margin-bottom: 0;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-.date-row {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 15px;
-    margin: 8px 0 0 0;
-}
-
-.day, .time {
-    font-size: 8px;
-}
-
-.date-number {
-    font-size: 40px;
-    font-weight: bold;
     color: white;
-    text-shadow: 0 0 20px #4c4ceb;
 }
 
-.year {
-    display: block;
-    font-size: 15px;
-    margin-top: 2px;
-    letter-spacing: 1px;
+.wedding-date-line .divider {
+    color: #c5c5c5;
 }
 
 /* Countdown Boxes */
@@ -223,13 +184,15 @@ body {
 /* --- RESPONSIVE --- */
 @media (max-width: 550px) {
     .hero h1 { font-size: 150px; }
-    .date-countdown-wrapper { bottom: 20px; } /* move higher on mobile if needed */
-    .date-number { font-size: 55px; }
-    .month, .year, .day, .time { font-size: 12px; }
-    .date-row { gap: 15px; }
+    .date-countdown-wrapper { bottom: 20px; }
+    .wedding-date-line {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
     .countdown-hero { margin-top: 30px; }
     .time-box { width: 55px; height: 55px; }
 }
+
 
 
 /* --- INVITATION SECTION --- */
@@ -911,44 +874,39 @@ footer {
     <h1 class="fade-in-slow glow">John Paul & Mary Joy</h1>
 
     <!-- DATE + COUNTDOWN WRAPPER -->
-    <div class="date-countdown-wrapper fade-in-delay">
+    <div class="date-countdown-wrapper">
 
-      <div class="wedding-date">
-        <div class="date-line"></div>
-        <div class="date-content">
-          <span class="month">J A N</span>
-          <div class="date-row">
-            <span class="day">SATURDAY</span>
-            <span class="date-number">17</span>
-            <span class="time">4:00 PM</span>
-          </div>
-          <span class="year"> 2026</span>
-        </div>
-        <div class="date-line"></div>
-      </div>
-
-      <div class="countdown-hero">
-        <div class="time-box">
-          <span id="days">00</span>
-          <p>Days</p>
-        </div>
-        <div class="time-box">
-          <span id="hours">00</span>
-          <p>Hours</p>
-        </div>
-        <div class="time-box">
-          <span id="minutes">00</span>
-          <p>Minutes</p>
-        </div>
-        <div class="time-box">
-          <span id="seconds">00</span>
-          <p>Seconds</p>
-        </div>
-      </div>
-
+    <!-- Single-Line Wedding Date -->
+    <div class="wedding-date-line">
+        <span class="weekday">SAT</span>
+        <span class="divider">|</span>
+        <span class="full-date">JANUARY 17, 2026</span>
+        <span class="divider">|</span>
+        <span class="time">4 PM</span>
     </div>
-  </div>
-</section>
+
+    <!-- Countdown Boxes -->
+    <div class="countdown-hero">
+        <div class="time-box">
+            <span id="days">00</span>
+            <p>Days</p>
+        </div>
+        <div class="time-box">
+            <span id="hours">00</span>
+            <p>Hours</p>
+        </div>
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+        </div>
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <p>Seconds</p>
+        </div>
+    </div>
+
+</div>
+
 
 <!--welcome tou our wedding-->
  <div style="color: #0d3c78; font-size: .7rem; text-align: center;">
@@ -956,7 +914,7 @@ footer {
 
     <p> <br>
         We can't wait to celebrate our special day with you. Feel free to have fun to take a look around. Thank you for the love and support. We are so excited to share this day with you!
-        As much as we love to invite everyone, we are only inviting you. We have chosen the people close to our hearts. We would not want anyone to lose a seat and want everyone to be able to enjoy a sumptuous meal.
+        <br><br>As much as we love to invite everyone, we are only inviting you. We have chosen the people close to our hearts. We would not want anyone to lose a seat and want everyone to be able to enjoy a sumptuous meal.
 
     </p>
     <p>Please use our wedding hashtag to help us capture every special moment:
