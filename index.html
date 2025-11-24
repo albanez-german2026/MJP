@@ -137,17 +137,19 @@ body {
 }
 
 /* Wedding Date Block */
-.wedding-date {
+.wedding-date-line {
     display: flex;
+    gap: 12px;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: white;
 }
 
-.date-line {
-    height: 1.5px;
-    background: #edeef0;
-    width: 80px;
+.wedding-date-line .divider {
+    color: #c5c5c5;  /* Light ivory-grey like in your sample */
 }
 
 .date-content {
@@ -225,6 +227,7 @@ body {
 @media (max-width: 550px) {
     .hero h1 { font-size: 200px; }
     .date-countdown-wrapper { bottom: 20px; } /* move higher on mobile if needed */
+    .wedding-date-line {font-size: 16px; letter-spacing: 2px;}
     .date-number { font-size: 55px; }
     .month, .year, .day, .time { font-size: 12px; }
     .date-row { gap: 15px; }
@@ -916,19 +919,13 @@ footer {
     <!-- DATE + COUNTDOWN WRAPPER -->
     <div class="date-countdown-wrapper fade-in-delay">
 
-      <div class="wedding-date">
-        <div class="date-line"></div>
-        <div class="date-content">
-          <span class="month">J A N</span>
-          <div class="date-row">
-            <span class="day">SATURDAY</span>
-            <span class="date-number">17</span>
-            <span class="time">4:00 PM</span>
-          </div>
-          <span class="year">. 2026</span>
-        </div>
-        <div class="date-line"></div>
-      </div>
+    <div class="wedding-date-line">
+        <span class="weekday">SAT</span>
+        <span class="divider">|</span>
+        <span class="full-date">JANUARY 17, 2026</span>
+        <span class="divider">|</span>
+        <span class="time">4 PM</span>
+    </div>
 
       <div class="countdown-hero">
         <div class="time-box">
